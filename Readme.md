@@ -1,7 +1,7 @@
 ##i lost MOUSE
 i lost MOUSE, it is wireless mouse that let you use your android device to control the remote computer withing the wifi range.
 
-##Download link ( download anyone )
+##Download link ( download any one )
 1. http://www.mediafire.com/download/t8x5iulhdyhllhk/iLostMouse.zip
 2. https://www.dropbox.com/s/yciat92z5rh05om/iLostMouse.zip?dl=0
 
