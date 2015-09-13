@@ -3,7 +3,6 @@ package com.example.anik.ilostmymouse.helpers;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Handler;
-import android.util.Log;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -39,8 +38,7 @@ public class TcpSocketClient {
                 socket.close();
                 connected = false;
             } catch (IOException e) {
-                showToast(context, "Couldn't get I/O for the connection");
-                Log.e(AppHelper.TAG, e.getMessage());
+                showToast(context, "Assuming that the connection is lost.");
             }
         }
     }
@@ -76,14 +74,14 @@ public class TcpSocketClient {
 
         @Override
         protected void onPreExecute() {
-            showToast(context, "Connecting to the host..");
+            showToast(context, "Connecting ...");
             super.onPreExecute();
         }
 
         @Override
         protected void onPostExecute(Void result) {
             if (connected) {
-                showToast(context, "Successfully connected.");
+                showToast(context, "You're now connected.");
             }
             super.onPostExecute(result);
         }
@@ -97,13 +95,11 @@ public class TcpSocketClient {
                 out = new PrintWriter(socket.getOutputStream(), true);
                 connected = true;
             } catch (UnknownHostException e) {
-                showToast(context, "Can not figure out the host");
+                showToast(context, "I don't know the host.");
                 connected = false;
-                Log.e(AppHelper.TAG, e.getMessage());
             } catch (IOException e) {
-                showToast(context, "Couldn't get I/O for the connection to: the host ");
+                showToast(context, "Host is ignoring you to connect.");
                 connected = false;
-                Log.e(AppHelper.TAG, e.getMessage());
             }
             return null;
         }

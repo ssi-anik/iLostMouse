@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.FrameLayout;
 
 import com.example.anik.ilostmymouse.fragments.NoWifiFragment;
@@ -73,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
             AppHelper.REMOTE_HOST_IP = connectionIpAddress;
 
         } catch (UnknownHostException e) {
-            Log.v(AppHelper.TAG, "Unknown host exception");
         }
         return !(remoteHostIPAddress.equals("0.0.0.0"));
     }

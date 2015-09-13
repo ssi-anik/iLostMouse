@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -86,7 +85,6 @@ public class WifiAvailableFragment extends Fragment {
                 super.onSwipeDown(diffX, diffY);
                 String command = String.format(AppHelper.FORMAT_MOVE, diffX, diffY);
                 client.send(command);
-                Log.v(AppHelper.TAG, "onSwipeDown");
             }
         });
 
